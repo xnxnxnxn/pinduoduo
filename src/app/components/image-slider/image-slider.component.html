@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="image-slider">
+    <img *ngFor="let slider of sliders" [src]="slider.imgUrl" [alt]="slider.caption">
+  </div>
+  <div class="nav-section">
+    <span *ngFor="let _ of sliders; let idx = index" class="slider-button">
+
+    </span>
+  </div>
+</div>
