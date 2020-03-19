@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TopMenu, ImageSlider } from './components';
+import { TopMenu, ImageSlider } from './shared/components';
+
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { TopMenu, ImageSlider } from './components';
 })
 export class AppComponent {
 
-  menus: TopMenu[] = [
+  menus: TopMenu[] = [ 
     {title: '热门', link: ''},
     {title: '男装', link: ''},
     {title: '女装', link: ''},
