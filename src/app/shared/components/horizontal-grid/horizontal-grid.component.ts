@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Emoji } from '../../decorators';
 
 
@@ -16,31 +16,35 @@ export interface Channel {
 })
 export class HorizontalGridComponent implements OnInit {
  
-   
-  channels: Channel[] = [
-    // tslint:disable-next-line: max-line-length
-    {id:1, title:'商城首页', link: '', icon: '../../../../assets/icon/alipay.png'},
-    // tslint:disable-next-line: max-line-leng../../../../assets/icon/alipay.pngth 
-    {id:2, title:'商城首页', link: '', icon: '../../../../assets/icon/alipay.png'},
-    // tslint:disable-next-line: max-line-leng../../../../assets/icon/alipay.pngth
-    {id:3, title:'商城首页', link: '', icon: '../../../../assets/icon/alipay.png'},
-    // tslint:disable-next-line: max-line-leng../../../../assets/icon/alipay.pngth
-    {id:4, title:'商城首页', link: '', icon: '../../../../assets/icon/alipay.png'},
-    // tslint:disable-next-line: max-line-leng../../../../assets/icon/alipay.pngth
-    {id:5, title:'商城首页', link: '', icon: '../../../../assets/icon/alipay.png'},
-    // tslint:disable-next-line: max-line-leng../../../../assets/icon/alipay.pngth
-    {id:6, title:'商城首页', link: '', icon: '../../../../assets/icon/alipay.png'},
-    // tslint:disable-next-line: max-line-leng../../../../assets/icon/alipay.pngth
-    {id:7, title:'商城首页', link: '', icon: '../../../../assets/icon/alipay.png'},
-    // tslint:disable-next-line: max-line-leng../../../../assets/icon/alipay.pngth
-    {id:8, title:'商城首页', link: '', icon: '../../../../assets/icon/alipay.png'},
-  ]
+  @Input() cols = 6;
+  @Input() displayCols = 4;
+  sliderMargin = '0';
+  
+ 
 
  
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public get scrollable(): boolean {
+    return this.cols > this.displayCols;
+  }
+
+  public get templateRows(): string {
+    return `minmax(auto, max-content)`;
+  }
+
+  public get templateColumns(): string {
+    return `repeat(${this.cols}, calc((100vw - ${this.displayCols *
+      0.4}rem) / ${this.displayCols}))`;
+  }
+
+  public handleScroll(ev) {
+    this.sliderMargin = `0 ${(100 * ev.target.scrollLeft) /
+      ev.target.scrollWidth}%`;
   }
 
 }

@@ -1,7 +1,5 @@
-
-<app-app-scrollable-tab [menus]="menus" (tabSelectChanged)="tabChanged($event)">
-</app-app-scrollable-tab>
-
-<app-image-slider [sliders]="imageSliders"></app-image-slider>
-
-<app-horizontal-grid></app-horizontal-grid>
+<!--
+  路由显示的内容是插入到 router-outlet 的同级的下方节点
+  而不是在 router-outlet 中包含
+-->
+<router-outlet></router-outlet>

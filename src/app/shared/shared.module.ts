@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AppScrollableTabComponent, ImageSliderComponent, HorizontalGridComponent } from './components';
 import { GridItemTitleDirective, GridItemImageDirective } from './directives';
 import { GridItemDirective } from './directives/grid-item.directive';
+import { AgoPipe } from './pipes';
 
 
 
@@ -13,7 +14,8 @@ import { GridItemDirective } from './directives/grid-item.directive';
     HorizontalGridComponent,
     GridItemTitleDirective,
     GridItemDirective,
-    GridItemImageDirective
+    GridItemImageDirective,
+    AgoPipe
 
   ],
   imports: [
@@ -25,7 +27,8 @@ import { GridItemDirective } from './directives/grid-item.directive';
     HorizontalGridComponent,
     GridItemTitleDirective,
     GridItemDirective,
-    GridItemImageDirective
+    GridItemImageDirective,
+    AgoPipe
   ]
 })
 export class SharedModule { }

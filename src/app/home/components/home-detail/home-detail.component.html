@@ -1,0 +1,20 @@
+<ng-container *ngIf="selectedTabLink === 'hot' else other">
+
+    <app-image-slider [sliders]="imageSliders"></app-image-slider>
+
+    <app-horizontal-grid>
+        <span gridItem *ngFor="let item of channels">
+            <img gridItemImage="2rem" [src]="item.icon" alt="" />
+            <span gridItemTitle="0.6rem" class="title">{{ item.title }}</span>
+        </span>
+    </app-horizontal-grid>
+</ng-container>
+
+<ng-template #other>
+其他子频道
+
+</ng-template>
+
+
+
+
