@@ -1,0 +1,9 @@
+<ng-container *ngIf="!finish else finishTpl">
+    {{countDown$ | async}}
+</ng-container>
+
+<ng-template #finishTpl>
+    结束了
+</ng-template>
+
+

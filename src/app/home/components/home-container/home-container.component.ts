@@ -15,12 +15,15 @@ export class HomeContainerComponent implements OnInit {
   constructor(private router: Router, private homeService: HomeService) { }
 
   menus: TopMenu[] = [];
-  
-  
+
+  startDate: Date = new Date(2020, 3, 25, 9, 47, 10);
+  endDate: Date = new Date(2020, 3, 25, 9, 47, 20);
+
+
   tabChanged(menu: TopMenu) {
     this.router.navigate(['home', menu.link]);
   }
-  
+
   ngOnInit(): void {
     this.menus = this.homeService.getMenus();
   }

@@ -2,6 +2,9 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@
 import { Channel, ImageSlider } from 'src/app/shared/components';
 import { ActivatedRoute } from '@angular/router';
 import { HomeService } from '../../services';
+import { Observable } from 'rxjs';
+import { filter, map, switchMap } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-home-detail',
@@ -18,14 +21,13 @@ export class HomeDetailComponent implements OnInit {
   imageSliders: ImageSlider[] = [];
   channels: Channel[] = [];
   
-  selectedTabLink = '';
-  ngOnInit(): void {
+  selectedTabLink$: Observable<string>;
   
-    this.route.paramMap.subscribe(params => {
-        console.log('路径参数', params);
-        this.selectedTabLink = params.get('tabLink');
-        this.cdr.markForCheck();
-    })
+  ngOnInit(): void {
+    this.selectedTabLink$ = this.route.paramMap.pipe(
+      filter(params => params.has('tabLink')),
+      map(params => params.get('tabLink'))
+    );
 
     this.imageSliders = this.homeService.getImageSlider();
     this.channels = this.homeService.getChannels();

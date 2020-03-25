@@ -1,4 +1,4 @@
-<ng-container *ngIf="selectedTabLink === 'hot' else other">
+<ng-container *ngIf="(selectedTabLink$ | async) === 'hot' else other">
 
     <app-image-slider [sliders]="imageSliders"></app-image-slider>
 
