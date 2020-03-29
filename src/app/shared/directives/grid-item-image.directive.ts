@@ -7,7 +7,7 @@ import { Directive,  HostBinding, Input, HostListener  } from '@angular/core';
 export class GridItemImageDirective {
   @HostBinding('style.width')
   @HostBinding('style.height')
-  @Input() gridItemImage = '0.5rem';
+  @Input() gridItemImage = '2rem';
 
   @HostBinding('style.grid-area') area = 'image';
   @HostBinding('object-fit') cover = 'cover';

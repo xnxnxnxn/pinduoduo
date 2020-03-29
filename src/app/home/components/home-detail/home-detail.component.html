@@ -1,19 +1,29 @@
-<ng-container *ngIf="(selectedTabLink$ | async) === 'hot' else other">
+<ng-container *ngIf="selectedTabLink$ | async as tab">
+    <ng-container *ngIf="tab === 'hot'">
 
-    <app-image-slider [sliders]="imageSliders"></app-image-slider>
+        <app-image-slider [sliders]="imageSliders"></app-image-slider>
+    
+        <app-horizontal-grid>
+            <span gridItem *ngFor="let item of channels">
+                <img gridItemImage="2rem" [src]="item.icon" alt="" />
+                <span gridItemTitle="0.6rem" class="title">{{ item.title }}</span>
+            </span>
+        </app-horizontal-grid>
 
-    <app-horizontal-grid>
-        <span gridItem *ngFor="let item of channels">
-            <img gridItemImage="2rem" [src]="item.icon" alt="" />
-            <span gridItemTitle="0.6rem" class="title">{{ item.title }}</span>
-        </span>
-    </app-horizontal-grid>
+    </ng-container>
 </ng-container>
 
-<ng-template #other>
-其他子频道
+<div class="ad-container" *ngIf="ad$ | async as ad">
+    <img [src]="ad.imageUrl" alt="" class="ad-image"/>
+</div>
 
-</ng-template>
+<app-vertical-grid [itemWidth]="'20rem'" [itemHeight]="'2rem'">  
+    <div *ngFor="let product of products$ | async">
+        <span>{{product.title}}</span>
+    </div>
+  </app-vertical-grid>
+
+
 
 
 

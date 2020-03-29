@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { HomeService } from '../../services';
 import { Observable } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
+import { Ad, Product } from 'src/app/shared/domain';
 
 
 @Component({
@@ -22,6 +23,8 @@ export class HomeDetailComponent implements OnInit {
   channels: Channel[] = [];
   
   selectedTabLink$: Observable<string>;
+  ad$: Observable<Ad>;
+  products$: Observable<Product[]>;
   
   ngOnInit(): void {
     this.selectedTabLink$ = this.route.paramMap.pipe(
@@ -31,6 +34,15 @@ export class HomeDetailComponent implements OnInit {
 
     this.imageSliders = this.homeService.getImageSlider();
     this.channels = this.homeService.getChannels();
+    this.ad$ = this.selectedTabLink$.pipe(
+      switchMap(tab => this.homeService.getAdByTab(tab)),
+      filter(ads => ads.length > 0),
+      map(ads => ads[0])
+    );
+    this.products$ = this.selectedTabLink$.pipe(
+      switchMap(tab => this.homeService.getProductsByTab(tab))
+    );
+
   }
 
 }

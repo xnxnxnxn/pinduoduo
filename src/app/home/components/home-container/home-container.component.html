@@ -1,6 +1,12 @@
-<app-app-scrollable-tab [menus]="menus" (tabSelectChanged)="tabChanged($event)">
+<app-app-scrollable-tab 
+[menus]="menus" 
+[selectedTabLink]="selectedTabLink$ | async"
+(tabSelected)="handleTabSelected($event)"
+
+>
 </app-app-scrollable-tab>
+<div class="main">
+    <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
-
-<app-count-down [startDate]="startDate" [endDate]="endDate"></app-count-down>
+<!-- <app-count-down [startDate]="startDate" [endDate]="endDate"></app-count-down> -->

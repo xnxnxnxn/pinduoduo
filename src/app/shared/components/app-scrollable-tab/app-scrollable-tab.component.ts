@@ -16,10 +16,11 @@ export interface TopMenu {
 })
 export class AppScrollableTabComponent implements OnInit {
 
+  @Input() selectedTabLink: string;
   @Input()
   menus: TopMenu[] = [];
-  @Output()
-  tabSelectChanged = new EventEmitter<TopMenu>();
+  @Output() tabSelected = new EventEmitter();
+
 
   selectIndex = 0;
 
@@ -29,8 +30,7 @@ export class AppScrollableTabComponent implements OnInit {
   }
 
   handleTabSelect(index: number) {
-    this.selectIndex = index;
-    this.tabSelectChanged.emit(this.menus[index]);
+    this.tabSelected.emit(this.menus[index]);
   }
 
 
