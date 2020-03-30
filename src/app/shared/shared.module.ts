@@ -7,6 +7,11 @@ import { AgoPipe } from './pipes';
 import { CountDownComponent } from './components/count-down/count-down.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { VerticalGridComponent } from './components/vertical-grid/vertical-grid.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
+import { TagDirective } from './directives/tag.directive';
+import { AvatarDirective } from './directives/avatar.directive';
+import { ProductTileComponent } from './components/product-tile/product-tile.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 
 
@@ -21,7 +26,12 @@ import { VerticalGridComponent } from './components/vertical-grid/vertical-grid.
     AgoPipe,
     CountDownComponent,
     FooterComponent,
-    VerticalGridComponent
+    VerticalGridComponent,
+    ProductCardComponent,
+    TagDirective,
+    AvatarDirective,
+    ProductTileComponent,
+    BackButtonComponent
 
   ],
   imports: [
@@ -37,7 +47,12 @@ import { VerticalGridComponent } from './components/vertical-grid/vertical-grid.
     AgoPipe,
     CountDownComponent,
     FooterComponent,
-    VerticalGridComponent
+    VerticalGridComponent,
+    ProductCardComponent,
+    TagDirective,
+    AvatarDirective,
+    ProductTileComponent,
+    BackButtonComponent
   ]
 })
 export class SharedModule { }

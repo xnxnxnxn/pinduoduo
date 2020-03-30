@@ -80,7 +80,7 @@ export class HomeService {
       tags: ['food'],
       price: 100,
       priceDesc: '不错',
-      buyerAvatars: []
+      buyerAvatars: ['http://pic1.zhimg.com/50/v2-ede9473ddcbd84fe7c1e363953ed7410_hd.jpg', 'http://pic1.zhimg.com/50/v2-ede9473ddcbd84fe7c1e363953ed7410_hd.jpg']
     },
     { id: 1,
       imageUrl: 'https://img.alicdn.com/imgextra/i1/725677994/O1CN01Evw0Z928vIjdnDOOo_!!725677994.jpg_430x430q90.jpg',
