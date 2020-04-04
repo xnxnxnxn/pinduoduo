@@ -5,7 +5,7 @@ import { Directive,  HostBinding, Input } from '@angular/core';
   selector: '[gridItemTitle]'
 })
 export class GridItemTitleDirective {
-  @HostBinding('style.font-size') @Input() appGridItemTitle = '0.5rem';
+  @HostBinding('style.font-size') @Input() gridItemTitle = '0.5rem';
   @HostBinding('style.grid-area') area = 'title';
   @HostBinding('style.white-space') wrap = 'nowrap';
 

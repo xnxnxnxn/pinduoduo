@@ -12,6 +12,7 @@ import { TagDirective } from './directives/tag.directive';
 import { AvatarDirective } from './directives/avatar.directive';
 import { ProductTileComponent } from './components/product-tile/product-tile.component';
 import { BackButtonComponent } from './components/back-button/back-button.component';
+import { DialogModule } from '../dialog';
 
 
 
@@ -52,7 +53,8 @@ import { BackButtonComponent } from './components/back-button/back-button.compon
     TagDirective,
     AvatarDirective,
     ProductTileComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    DialogModule
   ]
 })
 export class SharedModule { }

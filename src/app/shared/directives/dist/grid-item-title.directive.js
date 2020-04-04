@@ -9,13 +9,13 @@ exports.__esModule = true;
 var core_1 = require("@angular/core");
 var GridItemTitleDirective = /** @class */ (function () {
     function GridItemTitleDirective() {
-        this.appGridItemTitle = '0.5rem';
+        this.gridItemTitle = '0.5rem';
         this.area = 'title';
         this.wrap = 'nowrap';
     }
     __decorate([
         core_1.HostBinding('style.font-size'), core_1.Input()
-    ], GridItemTitleDirective.prototype, "appGridItemTitle");
+    ], GridItemTitleDirective.prototype, "gridItemTitle");
     __decorate([
         core_1.HostBinding('style.grid-area')
     ], GridItemTitleDirective.prototype, "area");

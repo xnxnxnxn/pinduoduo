@@ -170,7 +170,7 @@ export class HomeService {
       priceDesc: '不错',
       buyerAvatars: []
     }
-  ]
+  ];
 
   getMenus() {
     return this.menus;

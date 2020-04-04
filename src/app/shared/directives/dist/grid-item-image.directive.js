@@ -11,13 +11,13 @@ var GridItemImageDirective = /** @class */ (function () {
     function GridItemImageDirective(elr, renderer) {
         this.elr = elr;
         this.renderer = renderer;
-        this.appGridItemImage = '2rem';
+        this.gridItemImage = '2rem';
     }
     GridItemImageDirective.prototype.ngOnInit = function () {
         // 声明自己占据模版中的 image 区块
         this.setStyle('grid-area', 'image');
-        this.setStyle('width', this.appGridItemImage);
-        this.setStyle('height', this.appGridItemImage);
+        this.setStyle('width', this.gridItemImage);
+        this.setStyle('height', this.gridItemImage);
         this.setStyle('object-fit', 'cover');
     };
     GridItemImageDirective.prototype.setStyle = function (styleName, styleValue) {
@@ -28,7 +28,7 @@ var GridItemImageDirective = /** @class */ (function () {
     };
     __decorate([
         core_1.Input()
-    ], GridItemImageDirective.prototype, "appGridItemImage");
+    ], GridItemImageDirective.prototype, "gridItemImage");
     __decorate([
         core_1.HostListener('click', ['$event.target'])
     ], GridItemImageDirective.prototype, "handleClick");
